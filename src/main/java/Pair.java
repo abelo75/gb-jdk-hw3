@@ -18,7 +18,7 @@ public class Pair <V1, V2>{
     @Override
     public String toString() {
         return "Pair {" +
-                "first=" + first +
-                ", second=" + second;
+                "first=" + getFirst() +
+                ", second=" + getSecond();
     }
 }
