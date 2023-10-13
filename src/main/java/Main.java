@@ -1,6 +1,10 @@
 public class Main {
 
     static <T> boolean compareArrays(T[] a, T[] b) {
+        if (a == null || b == null) {
+            throw new IllegalArgumentException("Null passed");
+        }
+
         if (a.getClass()!=b.getClass()) {
             throw new IllegalArgumentException("Different type");
         }
@@ -52,6 +56,12 @@ public class Main {
             System.out.println("arrays compare 4 " + compareArrays(new String[]{"1", "1", "3"}, new Integer[]{1, 1, 3}));
         } catch (IllegalArgumentException e) {
             System.out.println("arrays compare 4 " + e.getMessage());
+        }
+        try {
+
+            System.out.println("arrays compare 5 " + compareArrays(null, new String[]{"1", "1", "3"}));
+        } catch (IllegalArgumentException e) {
+            System.out.println("arrays compare 5 " + e.getMessage());
         }
     }
 }
